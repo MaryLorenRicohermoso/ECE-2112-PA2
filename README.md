@@ -32,7 +32,7 @@ Example:
 
 Example: 
 
- `std = float (X.std()) ---> 25.8640`
+   `std = float (X.std()) ---> 25.8640`
 
 The Normalization formula was then applied to every element of the array. The mean is substracted from each value of x, and the result is divided by the standard deviation
 
@@ -48,15 +48,16 @@ The normalized mean and standard deviation were then checked using `.mean()` and
 
 Example:
 
-  `print ("Normalized mean: ", X_normalized.mean()) ---> Normalized Mean: 0.0
-          print ("Normalized Standard Deviation: ", X_normalized.std())`
+  `print ("Normalized mean: ", X_normalized.mean()) ---> 
+          print ("Normalized Standard Deviation: ", X_normalized.std())
+           Normalized Mean: 0.0 `
 
 
 `•np.save` - used to save the normalized array as a NumPy `.npy` file. The required filename for this problem is `X_normalized.npy`.
 
 Example:
 
- `np.save("X_normalized.npy", X_normalized)`
+   `np.save("X_normalized.npy", X_normalized)`
 
 Combining all these operations, the code used for this is: 
 
@@ -95,19 +96,19 @@ The following functions and methods were used in this problem:
 
 Example: 
 
-          `integers = np.arange(1,101)`
+  `integers = np.arange(1,101)`
           
 
 `• ** 3` – the exponentiation operator was used to cube every element of the integers array.
 
-          `cubes = integers ** 3`
+   `cubes = integers ** 3`
 
 
 `• .reshape()` – an array method used to change the shape of an array. The 100 cubed values were reshaped into a 10 × 10 array named C.
 
 Example: 
 
-          `C = cubes.reshape(10, 10)
+   `C = cubes.reshape(10, 10)
           print("Shape of C:", C.shape) --->
           Shape of C: (10, 10)`
 
@@ -115,18 +116,19 @@ Example:
 
 Example: 
 
-          `div_by_4 = C[C % 4 == 0]
+   ` div_by_4 = C[C % 4 == 0]
           print("Selected array div by 4:\n", div_by_4) --->
-          starts with 8 and ends with 1000000`
+          starts with 8 and ends with 1000000 `
 
           
 `• np.save()` -   used to save the selected values as div_by_4.npy.
 
-          `np.save("div_by_4.npy", div_by_4)`
+   ` np.save("div_by_4.npy", div_by_4) `
 
 These operations were combined to construct the function:
 
 ```Phython
+
 integers = np.arange (1,101)
 integers
 
@@ -138,8 +140,77 @@ div_by_4 = C[C % 4 == 0]
 
 print ("Selected array div by 4:\n", div_by_4)
 np.save("div_by_4.npy",div_by_4)
+
 ```
 
 ## C. Above-Mean Squares Problem
+
+Create a 6 × 6 NumPy array named S containing the squares of the first 36 positive integers. The mean of all the elements in S is calculated and stored in S_mean. Boolean filtering is then used to select only the values that are strictly greater than the mean. These values are stored in above_mean. 
+
+The following functions and methods were used in this problem:
+
+`• np.arange()` –  used to generate the integers from 1 to 36.
+
+Example: 
+
+ `np.arange(1,37)`
+
+`• ** 2` – the exponentiation operator was used to square every element in the array.
+
+Example: 
+
+   `np.arange(1,37) ** 2`
+
+`• .reshape()` –  used to arrange the 36 squared values into a 6 × 6 array.
+
+These operations were combined into one statement:
+
+`S = (np.arange(1,37) ** 2).reshape(6,6)`
+
+
+`• .mean()` –  used to calculate the mean of all the elements in S. The float() function was also used to convert the result into a floating-point number.
+
+Example:
+
+   `S_mean = float(S.mean()) --->
+    S_mean: 450.1666666666667 `
+
+`• Boolean indexing` –  used to select only the elements of S that are strictly greater than S_mean.
+
+Example: 
+
+   `above_mean = S[S > S_mean]
+   print("Above mean:", above_mean) --->
+  [484 529 576 625 676 729 784 841 900 961 1024 1089 1156 1225 1296] `
+  
+
+
+`• np.save()` -  used to save the selected array as above_mean.npy.
+
+Example: 
+
+   `np.save("above_mean.npy", above_mean)`
+
+Combining them, the final function for this problem is as follows:
+
+```Python
+S = (np.arange(1,37) ** 2).reshape(6,6)
+print (S)
+
+S_mean = float (S.mean())
+print ("S_mean:", S_mean)
+
+above_mean = S[S > S_mean]
+print ("Above mean:", above_mean)
+
+print ("Number of selected elements:", len(above_mean))
+
+np.save("above_mean.npy", above_mean)
+```
+
+Thank you for reading!
+
+To see the main python program for Programming Assignment 1, click this link  and download. Open on Jupyter Notebook, then run all cells.
+
 
 
