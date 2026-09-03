@@ -14,31 +14,31 @@ The following functions and methods were used in this problem:
 
 Example: 
 
-          `np.random.seed(2112)`
+ `np.random.seed(2112)`
 
 `• np.random.randint()` – generates random integers within a specified range. In this problem, integers from 10 to 100 are generated and arranged into a 5 × 5 array.
 
 Example: 
 
-          `X = np.random.randint(10, 101, size=(5, 5))`
+ `X = np.random.randint(10, 101, size=(5, 5))`
 
 `• .mean()` – calculates the arithmetic mean of all the elements in the array.
 
 Example: 
 
-          `mean = float(X.mean()) ---> 46.36`
+ `mean = float(X.mean()) ---> 46.36`
 
 `• .std()` – calculates the standard deviation of the array. The default std() calculation is used, which gives the population standard deviation required by the problem.
 
 Example: 
 
-          `std = float (X.std()) ---> 25.8640`
+ `std = float (X.std()) ---> 25.8640`
 
 The Normalization formula was then applied to every element of the array. The mean is substracted from each value of x, and the result is divided by the standard deviation
 
 Example: 
 
-          `X_normalized = (X - X_mean()) / X_std()`
+ `X_normalized = (X - X_mean()) / X_std()`
 
 
 The resulting array is stored in the variable `X_normalized`. This uses NumPy's vectorized array operations, allowing the calculation to be performed on all elements without using a Python loop. 
@@ -48,7 +48,7 @@ The normalized mean and standard deviation were then checked using `.mean()` and
 
 Example:
 
-          `print ("Normalized mean: ", X_normalized.mean()) ---> Normalized Mean: 0.0
+  `print ("Normalized mean: ", X_normalized.mean()) ---> Normalized Mean: 0.0
           print ("Normalized Standard Deviation: ", X_normalized.std())`
 
 
@@ -56,7 +56,7 @@ Example:
 
 Example:
 
-          `np.save("X_normalized.npy", X_normalized)`
+ `np.save("X_normalized.npy", X_normalized)`
 
 Combining all these operations, the code used for this is: 
 
