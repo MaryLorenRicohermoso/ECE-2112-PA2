@@ -13,26 +13,36 @@ The following functions and methods were used in this problem:
 `• np.random.seed()` – sets the seed for NumPy's random number generator. This makes the generated random values reproducible, meaning the same values will be generated every time the code is executed with the same seed.
 
 Example: 
+
           `np.random.seed(2112)`
 
 `• np.random.randint()` – generates random integers within a specified range. In this problem, integers from 10 to 100 are generated and arranged into a 5 × 5 array.
 
-X = np.random.randint(10, 101, size=(5, 5))
+Example: 
 
-• np.mean() – calculates the arithmetic mean of all the elements in the array.
+          `X = np.random.randint(10, 101, size=(5, 5))`
 
-X_mean = np.mean(X)
+`• np.mean()` – calculates the arithmetic mean of all the elements in the array.
 
-• np.std() – calculates the standard deviation of the array. The default std() calculation is used, which gives the population standard deviation required by the problem.
+Example: 
 
-X_std = np.std(X)
+          `X_mean = np.mean(X)`
+
+`• np.std()` – calculates the standard deviation of the array. The default std() calculation is used, which gives the population standard deviation required by the problem.
+
+Example: 
+
+          `X_std = np.std(X)`
 
 The mean is subtracted from every element of X, and the result is divided by the standard deviation. NumPy performs these operations directly on the entire array without using a loop.
 
-X_normalized = (X - X_mean) / X_std
+Example: 
+
+          `X_normalized = (X - X_mean) / X_std`
 
 The complete code for this problem is:
 
+```python
 import numpy as np
 
 np.random.seed(2112)
