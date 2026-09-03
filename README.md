@@ -208,7 +208,7 @@ np.save("above_mean.npy", above_mean)
 
 Thank you for reading!
 
-To see the main python program for Programming Assignment 1, click this link https://github.com/MaryLorenRicohermoso/ECE-2112-PA2/blob/main/Ricohermoso_MaryLoren_2ECEB_PA2.ipynb and download. Open on Jupyter Notebook, then run all cells.
+To see the main python program for Programming Assignment 2, click this link https://github.com/MaryLorenRicohermoso/ECE-2112-PA2/blob/main/Ricohermoso_MaryLoren_2ECEB_PA2.ipynb and download. Open on Jupyter Notebook, then run all cells.
 
 # README file Version History:
 September 2, 2026 - Initial README output uploaded
