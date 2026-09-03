@@ -85,3 +85,61 @@ np.save("X_normalized.npy", X_normalized)
 ```
 
 
+## B. Cubes Divisible by 4 Problem
+
+Create an array containing the first 100 positive integers, cube every element, and reshape the result into a 10 × 10 NumPy array named C. A Boolean condition is then used to select every cubed value that is divisible by 4. The selected values are stored in div_by_4. 
+
+The following functions and methods were used in this problem:
+
+`• np.arange()` – function used to create a sequence of numbers. np.arange(1,101) generates the integers from 1 to 100 because the ending value 101 is not included.
+
+Example: 
+
+          `integers = np.arange(1,101)`
+          
+
+`• ** 3` – the exponentiation operator was used to cube every element of the integers array.
+
+          `cubes = integers ** 3`
+
+
+`• .reshape()` – an array method used to change the shape of an array. The 100 cubed values were reshaped into a 10 × 10 array named C.
+
+Example: 
+
+          `C = cubes.reshape(10, 10)
+          print("Shape of C:", C.shape) --->
+          Shape of C: (10, 10)`
+
+`• Boolean indexing` – was used to filter the array and select only the values divisible by 4. The modulo operator % determines the remainder after division. Therefore, C % 4 == 0 identifies the elements whose remainder is zero when divided by 4.
+
+Example: 
+
+          `div_by_4 = C[C % 4 == 0]
+          print("Selected array div by 4:\n", div_by_4) --->
+          starts with 8 and ends with 1000000`
+
+          
+`• np.save()` -   used to save the selected values as div_by_4.npy.
+
+          `np.save("div_by_4.npy", div_by_4)`
+
+These operations were combined to construct the function:
+
+```Phython
+integers = np.arange (1,101)
+integers
+
+cubes = integers ** 3
+C = cubes.reshape (10, 10)
+print ("Shape of C:", C.shape)
+
+div_by_4 = C[C % 4 == 0]
+
+print ("Selected array div by 4:\n", div_by_4)
+np.save("div_by_4.npy",div_by_4)
+```
+
+## C. Above-Mean Squares Problem
+
+
