@@ -22,25 +22,43 @@ Example:
 
           `X = np.random.randint(10, 101, size=(5, 5))`
 
-`• np.mean()` – calculates the arithmetic mean of all the elements in the array.
+`• .mean()` – calculates the arithmetic mean of all the elements in the array.
 
 Example: 
 
-          `X_mean = np.mean(X)`
+          `mean = float(X.mean()) ---> 46.36`
 
-`• np.std()` – calculates the standard deviation of the array. The default std() calculation is used, which gives the population standard deviation required by the problem.
-
-Example: 
-
-          `X_std = np.std(X)`
-
-The mean is subtracted from every element of X, and the result is divided by the standard deviation. NumPy performs these operations directly on the entire array without using a loop.
+`• .std()` – calculates the standard deviation of the array. The default std() calculation is used, which gives the population standard deviation required by the problem.
 
 Example: 
 
-          `X_normalized = (X - X_mean) / X_std`
+          `std = float (X.std()) ---> 25.8640`
 
-The complete code for this problem is:
+The Normalization formula was then applied to every element of the array. The mean is substracted from each value of x, and the result is divided by the standard deviation
+
+Example: 
+
+          `X_normalized = (X - X_mean()) / X_std()`
+
+
+The resulting array is stored in the variable `X_normalized`. This uses NumPy's vectorized array operations, allowing the calculation to be performed on all elements without using a Python loop. 
+
+
+The normalized mean and standard deviation were then checked using `.mean()` and `.std()` :
+
+Example:
+
+          `print ("Normalized mean: ", X_normalized.mean()) ---> Normalized Mean: 0.0
+          print ("Normalized Standard Deviation: ", X_normalized.std())`
+
+
+`•np.save` - used to save the normalized array as a NumPy `.npy` file. The required filename for this problem is `X_normalized.npy`.
+
+Example:
+
+          `np.save("X_normalized.npy", X_normalized)`
+
+Combining all these operations, the code used for this is: 
 
 ```python
 import numpy as np
@@ -64,8 +82,6 @@ print("\nMean:", np.mean(X_normalized))
 print("Standard Deviation:", np.std(X_normalized))
 
 np.save("X_normalized.npy", X_normalized)
+```
 
-The normalized array should have a mean approximately equal to 0 and a standard deviation approximately equal to 1, with small differences possible because of floating-point rounding. 
 
-
----
